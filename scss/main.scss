@@ -1,0 +1,82 @@
+@import "_media";
+@import "_variable";
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  display: grid;
+  height: 100%;
+  margin: 0;
+  grid-template-rows: 3.5rem auto 3.5rem;
+  background: #fafafa;
+}
+
+header {
+  grid-column: 1 / -1;
+}
+
+footer {
+  grid-column: 1 / -1;
+}
+
+header,
+nav,
+main,
+aside,
+footer {
+  background: #e0e0e0;
+  border-radius: 0.5rem;
+  border: 1px solid rgba($color: #bdbdbd, $alpha: 0.25);
+}
+
+@include desktop {
+  body {
+    width: calc(100% - 1.5rem);
+    height: calc(100% - 1.5rem);
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 12px;
+    row-gap: 12px;
+    margin: 12px;
+  }
+
+  nav {
+    grid-column: 1 / 3;
+  }
+
+  main {
+    grid-column: 3 / 12;
+  }
+}
+
+@include tablet {
+  body {
+    width: calc(100% - 1rem);
+    height: calc(100% - 1rem);
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 8px;
+    row-gap: 8px;
+    margin: 8px;
+  }
+
+  main {
+    grid-column: 2 / 8;
+  }
+}
+
+@include mobile {
+  body {
+    width: calc(100% - 12px);
+    height: calc(100% - 12px);
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 6px;
+    row-gap: 6px;
+    margin: 6px;
+  }
+
+  main {
+    grid-column: 2 / 6;
+  }
+}
