@@ -1,10 +1,10 @@
 "use strict";
 
-export default class Nav {
+export default class Img {
   constructor(generate, type, value, parent, number, text) {
-    this.nav = new generate(
-      "nav",
-      "nav",
+    this.img = new generate(
+      "img",
+      "img",
       type,
       value,
       parent,

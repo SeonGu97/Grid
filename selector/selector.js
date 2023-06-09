@@ -12,21 +12,17 @@ export default class Selector {
 
   reset() {
     if (Array.isArray(this.type)) {
-      this.typeSelector(this.type[0]);
+      this.typeSelector(this.type[0], this.value[0]);
     } else {
-      this.typeSelector(this.type);
+      this.typeSelector(this.type, this.value);
     }
   }
 
-  typeSelector(type) {
+  typeSelector(type, value) {
     if (type == "id") {
-      this.This.__proto__.elements = document.querySelectorAll(
-        `#${this.value}`
-      );
+      this.This.__proto__.elements = document.querySelectorAll(`#${value}`);
     } else if (type == "class") {
-      this.This.__proto__.elements = document.querySelectorAll(
-        `.${this.value}`
-      );
+      this.This.__proto__.elements = document.querySelectorAll(`.${value}`);
     } else {
       this.This.__proto__.elements = document.querySelectorAll(
         this.name.tagName

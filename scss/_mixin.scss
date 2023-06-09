@@ -1,0 +1,12 @@
+@mixin primary-size {
+  width: 100%;
+  height: 100%;
+}
+
+@mixin grid-column {
+  grid-column: 1 / -1;
+}
+
+@mixin border {
+  border: 1px solid rgba($color: #bdbdbd, $alpha: 0.5);
+}
