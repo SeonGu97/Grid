@@ -7,6 +7,11 @@ import Header from "./header/header.js";
 import Main from "./main/main.js";
 import Footer from "./footer/footer.js";
 
+import Event from "./event/event.js";
+
+import storage from "../storage/storage.js";
+import storage_data from "../storage/storage_data.js";
+
 export default class Index {
   constructor(generate) {
     // name, element, type, value, parent, number, text
@@ -17,3 +22,11 @@ export default class Index {
 }
 
 const index = new Index(generate);
+
+const scroll = storage(
+  storage_data[0].key,
+  storage_data[0].value,
+  storage_data[0].primary
+);
+
+const event = Event(index, storage_data);
